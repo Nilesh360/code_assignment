@@ -1,0 +1,43 @@
+
+<style>
+
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/*login bar navigation */
+.login_bar a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.login_bar img {
+  margin-right: 5px;
+  margin-bottom: 6px;
+  width: 30px;
+  height: 30px;
+}
+
+
+.no-bullets {
+    list-style: none;
+  }
+
+  .login_bar .indicator {
+    margin-right: 5px;
+    margin-bottom: 6px;
+    width: 15px;
+    height: 15px;
+  }
+
+.indicator{
+    width: 10px;
+    height: 10px;
+    border:2px solid black;
+    border-radius: 50px;
+  }
+
+</style>

@@ -1,0 +1,41 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">SPEAKIFY</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+        </ul>
+        <div class="login_cart">
+        {% if request.user.is_authenticated %}
+        <div class="login_bar">
+          <a href="{% url 'logout' %}">
+            <img class="indicator" src="{% static 'images/online.PNG' %}" /> 
+              <img src="{% static 'images/avatar.svg' %}" />
+              <p>@{{user.username}}</p>
+               
+            </a>
+      </div>
+        {% else %}   
+        <div class="login_bar">
+            <a href="{% url 'login' %}">
+                <img class="indicator" src="{% static 'images/offline.PNG' %}" />
+                <img src="{% static 'images/avatar.svg' %}" />
+                <p>Login</p>
+                
+              </a>
+        </div>
+        {% endif %}   
+
+    </div>
+      </div>
+    </div>
+  </nav>

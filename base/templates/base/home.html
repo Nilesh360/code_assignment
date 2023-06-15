@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<h1>HOMEPAGE</h1>
+{% if request.user.is_authenticated %}
+<a href="{% url 'display-user' %}">All user</a>
+<form method="GET" action="{% url 'display-user' %}">
+    <input type="search" name="interest" placeholder="Interest .. ">
+    <button type="submit">Submit</button>
+</form>
+<br>
+<a href="{% url 'edit-user' %}">Edit Profile</a>
+<br>
+{% if room_name != None  and connect_request_user != None %}
+<label>Connection Request from : {{connect_request_user.username}}  </label>
+<a href="{% url 'room' %}">Connect</a>
+
+{% endif %}
+
+
+{% endif %}
+{% endblock %}
