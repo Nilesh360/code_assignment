@@ -10,5 +10,5 @@ class UserCreationForm(ModelForm):
 class EditUserForm(ModelForm):
     class Meta:
         model = User
-        fields = ['gender','country','interests']
+        fields = ['gender','country']
 

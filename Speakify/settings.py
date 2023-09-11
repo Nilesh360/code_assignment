@@ -146,14 +146,14 @@ CHANNEL_LAYERS = {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
             #"hosts": [("127.0.0.1", 6379)],
-            "hosts":[('redis://:FHbHUvpVx1aCdivlorjuAXCliqEWQvRj@redis-12715.c89.us-east-1-3.ec2.cloud.redislabs.com:12715')]
+            "hosts":[('redis://default:LVvARjay9qfDPxcsKyoBaR38FJj1NV3b@redis-11503.c114.us-east-1-4.ec2.cloud.redislabs.com:11503')]
         },
     },
 }
 CACHES = {
     'default': {
         'BACKEND': 'django_redis.cache.RedisCache',
-        'LOCATION': 'redis://:FHbHUvpVx1aCdivlorjuAXCliqEWQvRj@redis-12715.c89.us-east-1-3.ec2.cloud.redislabs.com:12715',  # Replace with your Redis server's details if necessary
+        'LOCATION': 'redis://default:LVvARjay9qfDPxcsKyoBaR38FJj1NV3b@redis-11503.c114.us-east-1-4.ec2.cloud.redislabs.com:11503',  # Replace with your Redis server's details if necessary
         'OPTIONS': {
             'CLIENT_CLASS': 'django_redis.client.DefaultClient',
         }

@@ -3,8 +3,6 @@
 {% block content %}
 <div>
     {%if users.count > 0  %}
-    {% if Interest != None %}
-    <h4>Topic : {{Interest}}</h4>
     <h6>Available User :  {{users.count}}</h6>
     {% endif %}
     {% for user in users %}
@@ -22,7 +20,7 @@
     </div>
     <hr>
     {% endfor %}
-    {% else %}
+    {% if users.count == 0 %}
     <h3>No user is online except you </h3>
     <a href="{{request.META.HTTP_REFERER}}">GO BACK</a>
     {% endif %}

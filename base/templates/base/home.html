@@ -11,9 +11,12 @@
 <br>
 <a href="{% url 'edit-user' %}">Edit Profile</a>
 <br>
-{% if room_name != None  and connect_request_user != None %}
-<label>Connection Request from : {{connect_request_user.username}}  </label>
-<a href="{% url 'room' %}">Connect</a>
+{% if connect_request_user != None %}
+{% for room_request in connect_request_user%}
+<label>Connection Request from : {{room_request.sent_by.username}}  </label>
+<a href="{% url 'room' room_request.id %}">Connect</a>
+<br>
+{% endfor %}
 
 {% endif %}
 
